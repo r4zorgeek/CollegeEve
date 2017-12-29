@@ -3,3 +3,5 @@ Flask-Session
 passlib
 SQLAlchemy
 Flask-JSGlue
+cs50
+
