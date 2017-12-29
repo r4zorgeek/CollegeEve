@@ -1,0 +1,28 @@
+/* stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 300px;
+}
+.tt-suggestion.tt-cursor {
+    background-color: #0097cf;
+    color: #fff;
+    cursor: pointer;
+}
+.tt-suggestion {
+    margin: 0;
+    padding: 6px 12px;
+}
+
+.container{
+  margin-bottom: 10px;
+}
+
+button[name="search_btn"] {
+  margin-top: -4px;
+}

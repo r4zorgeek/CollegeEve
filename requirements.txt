@@ -1,0 +1,5 @@
+Flask
+Flask-Session
+passlib
+SQLAlchemy
+Flask-JSGlue

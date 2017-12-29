@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Portfolio
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+<!--   <div class="row">
+      <div class="col-md-1"> -->
+        <button type="button" name="addEve" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Event</button>
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Event</h4>
+              </div>
+              <div class="modal-body">
+                <form action="{{ url_for('addEvent') }}" method="post">
+                  <div class="form-group">
+                    <label for="eventname">Event Name</label>
+                    <input type="text" class="form-control" name="eve_name" placeholder="Event Name" required/>
+                  </div>
+                  <div class="form-group">
+                    <label for="eventDate">Event Dates</label>
+                    <input type="text" class="form-control" name="eve_date" placeholder="Enter Date. Example: 28-12-17 to 29-12-17" required/>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary form-control">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!--  </div> -->
+  <!--    <div class="col-md-2 col-md-offset-1"> -->
+      <a href="{{ url_for('removeEvent') }}"><button type="button" name="removeEve" class="btn btn-danger">Remove Events</button></a>
+  <!--    </div>  -->
+<!--    </div> -->
+  </div>
+
+  <div class="container">
+  {% for clg in clg %}
+    <div class="panel panel-default">
+      <div class="panel panel-heading">
+        <h1 class="panel-title">College Name: {{ clg.clg_name }} </h1>
+      </div>
+      <div class="panel-body">
+        <h3>Events: </h3>
+        <h3>Event Name: {{ clg.eve_name }}</h3>
+        <h3>Date: {{ clg.eve_date }}</h3>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+  Index
+
+{% endblock %}
+
+{% block main %}
+
+  <form id="form" action="{{ url_for('search_for_clg') }}" method="post">
+    <div class="form-group">
+      <div class="input-group">
+        <label class="sr-only" for="q">College Name</label>
+        <input class="form-control" name="college_name" id="q" placeholder="Search College Name" type="text" size="100%"/>
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" name="search_btn"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  {% for clg in clg %}
+    <div class="panel panel-default">
+      <div class="panel panel-heading">
+        <h1 class="panel-title">College Name: {{ clg.clg_name }} </h1>
+      </div>
+      <div class="panel-body">
+        <h3>Events: </h3>
+        <h3>Event Name: {{ clg.eve_name }}</h3>
+        <h3>Date: {{ clg.eve_date }}</h3>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

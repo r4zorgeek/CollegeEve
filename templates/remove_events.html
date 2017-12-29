@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Remove Events
+{% endblock %}
+
+{% block main %}
+  <form action="{{ url_for('removeEvent') }}" method="post">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Event Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for event in event_list %}
+          <div class="form-group">
+            <tr>
+              <td> <input type="checkbox" name="event_name" value="{{ event.eve_name }}"> </td>
+              <td> {{ event.eve_name }} </td>
+              <td> {{ event.eve_date }} </td>
+            </tr>
+          </div>
+          {% endfor %}
+      </tbody>
+    </table>
+    <button type="submit" class="btn btn-danger form-control">Remove</button>
+  </form>
+{% endblock %}

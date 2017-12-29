@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <!-- get bootstrap validator https://github.com/1000hz/bootstrap-validator -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+{% endblock %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('register') }}" method="post" role="form" data-toggle="validator">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="email_id" placeholder="College Email" type="email" id="inputEmail"
+                 data-error="Email Address Invalid" required/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password" data-minlength="6" id="inputPassword" required/>
+                <div class="help-block">Minimum of 6 characters</div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirm_password" placeholder="Confirm-Password" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Passwords Do Not Match" type="password" required/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="q" name="college_name" placeholder="Search College Name" type="text" size="80px"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Log In</button>
+            </div>
+    </form>
+{% endblock %}
