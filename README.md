@@ -1,2 +1,2 @@
 # CollegeEve
-Instructions Comming Soon..
+Instructions Coming Soon..
